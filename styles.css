@@ -1,0 +1,179 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+}
+
+body{
+    background: url("./images/R.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    letter-spacing: 0.2rem;
+}
+
+.search{
+    padding: 2%;
+}
+
+input{
+    width: 80%;
+    padding: 1%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+
+input::placeholder{
+    color: #fff;
+    font-weight: 500;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    margin-left: 4%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+}
+
+button:hover{
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+}
+
+.container{
+    padding: 20px 70px;
+    margin-bottom: 3%;
+}
+
+.location{
+    font-weight: 500;
+}
+
+.state-country{
+    font-weight: 700;
+}
+
+.current-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.date-container .time{
+    font-size: 4rem;
+}
+
+.date-container #am-pm{
+    font-size: 2.5rem;
+}
+
+.date-container .date{
+    font-size: 2.5rem;
+}
+
+.place-container{
+    text-align: end;
+}
+
+.place-container .time-zone{
+    font-size: 2rem;
+}
+
+
+.place-container .state-country{
+    font-size: 1.6rem;
+}
+
+.current-info .others .weather-items{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.current-info .others{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(27, 26, 26, 0.7);
+    border-radius: 5px;
+    padding: 7%;
+    margin: 20px 0;
+    border: 1px solid #fff;
+}
+
+.future-prediction{
+    background-color: rgba(0,0,0,0.7);
+    padding: 3%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.future-prediction .weather-forecast{
+    display: flex;
+}
+
+.future-prediction .today{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.future-prediction .today .day{
+    padding: 4%;
+    background-color: rgba(66, 64, 64,0.7);
+    border-radius: 50px;
+    text-align: center;
+}
+
+.future-prediction .today .temp{
+    font-size: 1.5rem;
+    padding-top: 20px;
+}
+
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    padding: 3%;
+    background-color: #000;
+    border-radius: 7px;
+}
+
+.weather-forecast .weather-forecast-item .temp{
+    font-size: 0.7rem;
+    margin-top: 10px;
+
+}
+
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    background-color: rgba(66, 64, 64,0.7);
+    border-radius: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1200px){
+    input{
+        width: 50%;
+    }
+    .future-prediction{
+        justify-content: start;
+    }
+    .future-prediction .today .temp{
+        font-size: 1rem;
+    }
+}
