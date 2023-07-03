@@ -28,11 +28,11 @@ setInterval(() => {
 
 function inputValue(){
     let inputValue = document.getElementById("city").value;
-    fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + inputValue +
+    fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + inputValue +
     '&limit=5&appid=' + apikey).then(res => res.json()).then(data => {
         console.log(data)
         let{lat, lon} = data[0];
-        fetch('http://api.openweathermap.org/geo/1.0/reverse?lat=' + lat + '&lon='+ 
+        fetch('https://api.openweathermap.org/geo/1.0/reverse?lat=' + lat + '&lon='+ 
         lon + '&appid=' + apikey).then(res => res.json()).then(data => {
             console.log(data)
             showLocation(data);
@@ -52,7 +52,7 @@ getWeatherData()
 function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
         let{latitude, longitude} = success.coords;
-        fetch('http://api.openweathermap.org/geo/1.0/reverse?lat=' + latitude + '&lon='+ 
+        fetch('https://api.openweathermap.org/geo/1.0/reverse?lat=' + latitude + '&lon='+ 
         longitude + '&appid=' + apikey).then(res => res.json()).then(data => {
             console.log(data)
             showLocation(data);
@@ -105,7 +105,7 @@ function showWeatherData(data)  {
         if(index == 0)  {
             currentTempEl.innerHTML = `
             <div class="today" id="current-temp">
-            <img src="http://openweathermap.org/img/wn/` + day.weather[0].icon +`@4x.png" alt="weather icon" class="w-icon" />
+            <img src="https://openweathermap.org/img/wn/` + day.weather[0].icon +`@4x.png" alt="weather icon" class="w-icon" />
             <div class="other">
                 <div class="day">` + window.moment(day.dt * 1000).format('ddd ') + `</div>
                 <div class="temp">Night :<br> `+ day.temp.night +`&#176; C</div>
@@ -115,7 +115,7 @@ function showWeatherData(data)  {
             otherForecast += 
             `<div class="weather-forecast-item">
                 <div class="day">` + window.moment(day.dt * 1000).format('ddd') + `</div>
-                <img src="http://openweathermap.org/img/wn/` + day.weather[0].icon + `@2x.png" alt="weather icon" class="w-icon" />
+                <img src="https://openweathermap.org/img/wn/` + day.weather[0].icon + `@2x.png" alt="weather icon" class="w-icon" />
                 <div class="temp">Night : <br>` + day.temp.night + ` &#176; C</div>
                 <div class="temp">Day : <br>` + day.temp.day + ` &#176; C</div>
                 <div class="temp">Pressure: <br>` + day.pressure + ` </div>
